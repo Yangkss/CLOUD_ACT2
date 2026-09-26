@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A Field Guide to Python</title>
+<meta name="description" content="A five-specimen field guide to Python basics, with a live in-browser lab for running real Python code." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128021;</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/gruvbox-dark-medium.min.css">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">&gt;&gt;&gt;</span> field guide <em>to python</em>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#specimens">Specimens</a>
+      <a href="#lab">Live Lab</a>
+      <a href="#further">Further Reading</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#specimens">Specimens</a>
+    <a href="#lab">Live Lab</a>
+    <a href="#further">Further Reading</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="overline">Edition No. 1 &mdash; Beginner Terrain</p>
+        <h1>A Field Guide<br/>to <span class="accent">Python</span></h1>
+        <p class="lede">
+          Five specimens, collected and labeled: the variable, the branch, the loop, the function,
+          and the list. Read the notes, inspect the code, then walk into the live lab at the bottom
+          of the trail and run real Python yourself &mdash; no installation, no terminal of your own required.
+        </p>
+        <div class="hero-actions">
+          <a href="#specimens" class="btn btn-primary">Start the trail</a>
+          <a href="#lab" class="btn btn-ghost">Skip to the lab &rarr;</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="specimen-tag">SPECIMEN 00</div>
+        <pre><code class="language-python">import this
+
+# "Beautiful is better than ugly.
+#  Simple is better than complex.
+#  Readability counts."
+#  &mdash; The Zen of Python</code></pre>
+        <div class="hero-card-footer">first observed &middot; 1991, by Guido van Rossum</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <p>
+      Python reads closer to plain instructions than most languages, which is exactly why it spread from
+      research labs into classrooms, sysadmin scripts, and production backends alike. There's no semicolon
+      to forget and no braces to balance &mdash; indentation itself marks where a block of code begins and ends.
+      That's the whole trick this guide exists to demonstrate. What follows are five specimens worth
+      recognizing on sight, each with a short note and a runnable sample.
+    </p>
+  </section>
+
+  <section class="specimens" id="specimens">
+    <h2 class="section-heading"><span class="section-number">01&ndash;05</span> The Specimens</h2>
+
+    <article class="specimen" data-reveal>
+      <div class="specimen-number">01</div>
+      <div class="specimen-body">
+        <div class="specimen-heading">
+          <h3>Variables &amp; Data Types</h3>
+          <span class="latin">variabilis communis</span>
+        </div>
+        <p>
+          A variable is a label tied to a value. Python figures out the type &mdash; text, whole number,
+          decimal, true/false &mdash; on its own, so you never declare it up front. Retype the label to a
+          new value at any time; the old value is simply forgotten.
+        </p>
+        <div class="code-block">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre><code class="language-python">name = "Grace"
+age = 34
+hourly_rate = 42.50
+is_remote = True
+
+print(f"{name}, age {age}, works remote: {is_remote}")
+print(type(hourly_rate))  # &lt;class 'float'&gt;</code></pre>
+        </div>
+        <div class="field-note">
+          <strong>Field note:</strong> <code>int</code>, <code>float</code>, <code>str</code>, and <code>bool</code>
+          are the four types you'll meet most often on the trail.
+        </div>
+      </div>
+    </article>
+
+    <article class="specimen specimen--reverse" data-reveal>
+      <div class="specimen-number">02</div>
+      <div class="specimen-body">
+        <div class="specimen-heading">
+          <h3>Conditionals</h3>
+          <span class="latin">decisio ramosa</span>
+        </div>
+        <p>
+          <code>if</code>, <code>elif</code>, and <code>else</code> branch your program down different paths
+          depending on what's true right now. Only one branch ever runs, and Python checks them top to
+          bottom, stopping at the first match.
+        </p>
+        <div class="code-block">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre><code class="language-python">temperature = 16
+
+if temperature > 25:
+    print("Shorts weather.")
+elif temperature > 12:
+    print("A light jacket will do.")
+else:
+    print("Bundle up.")</code></pre>
+        </div>
+        <div class="field-note">
+          <strong>Field note:</strong> the colon and the indent are not decoration &mdash; they're how Python
+          knows a block belongs to the branch above it.
+        </div>
+      </div>
+    </article>
+
+    <article class="specimen" data-reveal>
+      <div class="specimen-number">03</div>
+      <div class="specimen-body">
+        <div class="specimen-heading">
+          <h3>Loops</h3>
+          <span class="latin">repetitio cyclica</span>
+        </div>
+        <p>
+          A <code>for</code> loop walks through a collection item by item. A <code>while</code> loop keeps
+          going as long as a condition holds. Both save you from writing the same line over and over.
+        </p>
+        <div class="code-block">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre><code class="language-python">trail_markers = ["creek", "ridge", "overlook", "camp"]
+
+for marker in trail_markers:
+    print(f"Passing {marker}...")
+
+steps_left = 3
+while steps_left > 0:
+    print(f"{steps_left} stretch(es) to go")
+    steps_left -= 1</code></pre>
+        </div>
+        <div class="field-note">
+          <strong>Field note:</strong> forgetting to shrink the condition in a <code>while</code> loop
+          (like the <code>steps_left -= 1</code> above) is the single most common way to freeze a program.
+        </div>
+      </div>
+    </article>
+
+    <article class="specimen specimen--reverse" data-reveal>
+      <div class="specimen-number">04</div>
+      <div class="specimen-body">
+        <div class="specimen-heading">
+          <h3>Functions</h3>
+          <span class="latin">functio reusabilis</span>
+        </div>
+        <p>
+          A function packages up a set of steps under a name so you can call on it repeatedly, from
+          anywhere, with different inputs each time. <code>def</code> defines it; <code>return</code> hands
+          a value back to whoever called it.
+        </p>
+        <div class="code-block">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre><code class="language-python">def greet(name, time_of_day="day"):
+    return f"Good {time_of_day}, {name}."
+
+print(greet("Amara"))
+print(greet("Diego", time_of_day="evening"))</code></pre>
+        </div>
+        <div class="field-note">
+          <strong>Field note:</strong> <code>time_of_day="day"</code> is a default &mdash; skip that
+          argument and Python quietly fills it in for you.
+        </div>
+      </div>
+    </article>
+
+    <article class="specimen" data-reveal>
+      <div class="specimen-number">05</div>
+      <div class="specimen-body">
+        <div class="specimen-heading">
+          <h3>Lists</h3>
+          <span class="latin">coetus ordinatus</span>
+        </div>
+        <p>
+          A list holds an ordered, changeable collection of values. You can add to it, slice out a piece
+          of it, or build a new one in a single line with a list comprehension.
+        </p>
+        <div class="code-block">
+          <button class="copy-btn" type="button">Copy</button>
+          <pre><code class="language-python">supplies = ["map", "water", "compass"]
+supplies.append("headlamp")
+
+print(supplies[0])       # "map"
+print(supplies[-1])      # "headlamp"
+print(supplies[1:3])     # ["water", "compass"]
+
+doubled = [item.upper() for item in supplies]
+print(doubled)</code></pre>
+        </div>
+        <div class="field-note">
+          <strong>Field note:</strong> indexes start at <code>0</code>, and <code>-1</code> always means
+          "the last one."
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="lab" id="lab">
+    <h2 class="section-heading"><span class="section-number">06</span> The Live Lab</h2>
+    <p class="lab-intro">
+      This is a real Python interpreter running in your browser tab, on-loan from
+      <a href="https://onecompiler.com" target="_blank" rel="noopener noreferrer">OneCompiler</a>. Edit the
+      starter snippet below or clear it entirely, then press Run.
+    </p>
+
+    <div class="terminal-frame">
+      <div class="terminal-chrome">
+        <span class="dot dot-red"></span><span class="dot dot-amber"></span><span class="dot dot-green"></span>
+        <span class="terminal-title">python3 &mdash; live_lab.py</span>
+      </div>
+      <iframe
+        src="https://onecompiler.com/embed/python?theme=dark&hideNew=true&hideNewFileOption=true&hideTitle=true&hideLanguageSelection=true"
+        title="Live Python compiler"
+        loading="lazy"
+        allow="clipboard-write"
+      ></iframe>
+      <noscript>Enable JavaScript to run the embedded compiler, or open one directly at onecompiler.com/python.</noscript>
+    </div>
+
+    <div class="challenges">
+      <h3>Try these on for size</h3>
+      <ul>
+        <li>Rewrite the loop from Specimen&nbsp;03 to print only every other marker.</li>
+        <li>Write a function that takes a list of numbers and returns the largest one &mdash; without using <code>max()</code>.</li>
+        <li>Build a list comprehension that keeps only the words longer than four letters from <code>["fox", "juniper", "elk", "cottonwood"]</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="further" id="further">
+    <h2 class="section-heading"><span class="section-number">&infin;</span> Further Reading</h2>
+    <div class="further-grid">
+      <a class="further-card" href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">
+        <span class="further-label">Official Docs</span>
+        <span class="further-title">The Python Tutorial</span>
+        <span class="further-desc">The complete, canonical walkthrough straight from python.org.</span>
+      </a>
+      <a class="further-card" href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener noreferrer">
+        <span class="further-label">Reference</span>
+        <span class="further-title">The Standard Library</span>
+        <span class="further-desc">Every built-in module, once you're ready to go past the basics.</span>
+      </a>
+      <a class="further-card" href="https://peps.python.org/pep-0008/" target="_blank" rel="noopener noreferrer">
+        <span class="further-label">Style</span>
+        <span class="further-title">PEP 8</span>
+        <span class="further-desc">The style guide that shapes how most Python actually gets written.</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>A self-contained field guide &mdash; no installs, no accounts, just Python.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
